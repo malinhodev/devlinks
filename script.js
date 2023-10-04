@@ -10,3 +10,26 @@ function toggleMode(){
         img.setAttribute("src", "./assets/avatar.jpeg")
     }
 }
+
+const changeThemeBtn = document.querySelector("#switch");
+
+function loadTheme() {
+    const darkMode = localStorage.getItem("light");
+  
+    if (darkMode) {
+      toggleDarkMode();
+    }
+  }
+  
+  loadTheme();
+
+  changeThemeBtn.addEventListener("switch", function () {
+    toggleDarkMode();
+  
+    // Save or remove dark mode from localStorage
+    localStorage.removeItem("light");
+  
+    if (document.body.classList.contains("light")) {
+      localStorage.setItem("light", 1);
+    }
+  });

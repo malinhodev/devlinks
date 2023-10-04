@@ -77,10 +77,6 @@ body{
     animation: slide-in .3s forwards;
 }
 
-#switch button:hover{
-    outline: 8px solid var(--surface-color);
-}
-
 #switch span{
     display: block;
     border-radius: 9999px;
@@ -152,6 +148,9 @@ footer{
 
     .light{
         --bg-url: url(./assets/bg-desktop-light.jpg)
+    }
+    #switch button:hover{
+        outline: 8px solid var(--surface-color);
     }
 }
 
