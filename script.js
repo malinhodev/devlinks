@@ -6,30 +6,19 @@ function toggleMode(){
 
     if(html.classList.contains("light")){
         img.setAttribute("src", "./assets/avatar-light.jpeg")
+        localStorage.setItem("light", 1)
     }else{
         img.setAttribute("src", "./assets/avatar.jpeg")
+        localStorage.removeItem("light")
     }
 }
 
-const changeThemeBtn = document.querySelector("#switch");
-
 function loadTheme() {
-    const darkMode = localStorage.getItem("light");
+    const lightMode = localStorage.getItem("light");
   
-    if (darkMode) {
-      toggleDarkMode();
+    if (lightMode) {
+      toggleMode();
     }
   }
   
   loadTheme();
-
-  changeThemeBtn.addEventListener("switch", function () {
-    toggleDarkMode();
-  
-    // Save or remove dark mode from localStorage
-    localStorage.removeItem("light");
-  
-    if (document.body.classList.contains("light")) {
-      localStorage.setItem("light", 1);
-    }
-  });
